@@ -1,0 +1,38 @@
+
+<div id='main' ng-controller="giphyController as giphy">
+
+
+
+<div id='left'>
+<div id="giphyBox">
+  <img ng-show="giphy.giphyObj" ng-src="{{giphy.giphyObj}}"/>
+</div>
+
+<div id="comment">
+  <textarea placeholder="Comment Here..." type="text" id="task" name="task" class="form-control" ng-model="giphy.giphy_comment"></textarea>
+</div>
+
+<div id="favButton">
+  <button type='submit' ng-click=''>Favorit</button>
+</div>
+</div>
+
+
+
+<div id='right'>
+  <form>
+    <button ng-click="giphy.randomGiphy()">Random!</button>
+    <br />
+    <br />
+  <label>Search</label>
+  <input type="text" ng-model="giphy.search"/>
+  <button type="submit" ng-click="giphy.searchGiphy()">Search!</button>
+  <ul>
+    <li ng-repeat="individualGiphy in giphy.giphySearchList">
+        <a href="{{individualGiphy.images.original.url}}"/>{{individualGiphy.id}}</a>
+      </li>
+  </ul>
+</form>
+</div>
+
+</div>
